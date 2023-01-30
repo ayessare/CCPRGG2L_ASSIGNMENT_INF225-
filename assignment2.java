@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class App {
 
     static Scanner scan = new Scanner(System.in);
-    static final int targetWeight = 150;
+    static final int targetWeight = 154;
 
     public static void main(String[] args) throws Exception {
 
         System.out.print("Enter current weight in lbs: ");
         int weight = scan.nextInt();
 
-        if (weight > 150) {
+        if (weight > 154) {
             loseWeight(weight);
         } else {
             System.out.println("Current weight must be greater than 150 lbs!");
