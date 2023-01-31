@@ -5,7 +5,7 @@ public class App {
         Sword.name = "Sprikitik";
         Sword.damage = 75;
         Sword.rarity = "Legendary";
-        Sword.addDamage(additionalDamage:5);
+        Sword.addDamage(5);
 
         System.out.print(Sword.showNameandRarity());
 
