@@ -55,9 +55,8 @@ public class exercise1 {
         }
         
         // ============================================================
-        
-        System.out.println("3. Finding specific files.");
-        // 3. Finding specific files.
+       
+       System.out.println("3. Finding specific files.");
 
         // Rules
         // The pattern should match files with the following file extension names
@@ -69,13 +68,13 @@ public class exercise1 {
         String myfiles = "myfile.txt, thesis.xlsx, this is not a file, picture.jpg, selfie.png";
 
         // Provide regex pattern
-        pattern = Pattern.compile("([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(.jpg|.png|.xlsx|.txt)$");
+        pattern = Pattern.compile("\\w+(\\.xlsx|\\.png|\\.jpg|\\.txt)");
         match = pattern.matcher(myfiles);
 
         boolean found = false;
 
         while (match.find()) {
-            // System.out.println("I found the text " + match.group());
+            System.out.println("I found the file: " + match.group());
             found = true;
         }
         if (!found) {
