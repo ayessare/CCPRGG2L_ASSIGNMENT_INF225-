@@ -1,21 +1,20 @@
-import java.util.Scanner;
+import java.util.Scanner; 
 
 public class App {
 
     static Scanner scan = new Scanner(System.in);
-    static final int targetWeight = 154;
-
+    static final int targetWeight = 150;
     public static void main(String[] args) throws Exception {
-
+        
         System.out.print("Enter current weight in lbs: ");
         int weight = scan.nextInt();
 
-        if (weight > 154) {
+        if (weight > 150) {
             loseWeight(weight);
         } else {
-            System.out.println("Current weight must be greater than 154 lbs!");
+            System.out.println("Current weight must be greater than 150 lbs!");
         }
-        scan.close();
+        scan.close();   
     }
 
     static void loseWeight(int currentWeight) {
@@ -24,6 +23,17 @@ public class App {
         System.out.println("Doing exercises!");
 
         currentWeight = checkWeight(currentWeight);
+        
+        // Define the base case by using an if condition. The target weight is 150 lbs
+        if (currentWeight > 150) {
+            // Do something to reach the target. Call the fixDietandExercise() method
+            currentWeight =  fixDietandExercise(currentWeight);
+            // Do the recursive call. Call the loseWeight() method 
+            loseWeight(currentWeight);
+        } else if (currentWeight == targetWeight) {
+            // if the target weight has been reached, print the code below.
+            System.out.println("I have reached my target weight!");
+        }
 
     }
 
@@ -38,7 +48,8 @@ public class App {
         System.out.print("Enter weight lost in lbs: ");
         int weightlost = scan.nextInt();
 
-        int currentWeight = weight - weightlost;
+        int currentWeight = weight - weightlost; 
         return currentWeight;
+
     }
 }
